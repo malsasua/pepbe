@@ -21,8 +21,10 @@ function App() {
           <div className="bg-zinc-200 p-2">
             <Routes>
               <Route path='/items' element={<ItemsPage />} />
+              <Route path='/pepbe/home/:codeId' element={<HomePage />} />
               <Route path='/home/:codeId' element={<HomePage />} />
               <Route path='/home' element={<HomePage />} />
+              <Route path='/pepbe' element={<HomePage />} />
               <Route path='/new' element={<NewPage />} />
               <Route path='/open' element={<OpenPage />} />
               <Route path='/summary' element={<SummaryPage />} />

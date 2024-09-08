@@ -31,7 +31,7 @@ function FinishPage() {
           }
         )}</div>
         <div className="p-3">
-          <ButtonStd action={() => goToNewPage()} name='New' />
+          <ButtonStd action={() => goToNewPage()} name='Volver' />
         </div>
       </div>
     </div >

@@ -32,7 +32,7 @@ function NewPage() {
         <div
           className="flex rounded-full  bg-gradient-to-tr from-red-400 via-orange-400 to-rose-400 p-1 shadow-lg mx-auto">
           <Link className="flex-1 font-bold text-l bg-slate-300 px-6 py-1 rounded-full"
-            to='/home'>Volver</Link>
+            to='/pepbe'>Volver</Link>
         </div>
       </div>
 

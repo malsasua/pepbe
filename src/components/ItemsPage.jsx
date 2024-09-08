@@ -50,8 +50,35 @@ function ItemsPage() {
             to='/new'>Volver</Link>
         </div>
       </div>
+      <div className="p-3">
+        <ButtonStd
+          action={() => {
+            if (sessionCode === undefined) {
+              createSession(
+                {
+                  code: newCode.toString(),
+                  items: itemsNew,
+                  categories: categories,
+                  date: dateInYyyyMmDdHhMm(new Date())
+                },
+                (p) => {
+                  setSessionCode(p);
+                  setOpenCode(p);
+                  setUrlCode(p);
+                },
+                (m) => {
+                  console.log(m);
+                }
+              )
+            } else {
+              navigate('/summary');
+            }
+          }}
+          name={textButton}
+        />
+      </div>
       <div className="mt-4 py-2 flex-auto rounded-md mx-auto bg-gradient-to-tr from-slate-200 to-slate-400 p-1 shadow-lg">
-        <div className="text-l p-1">Productos Seleccionados</div>
+        <div className="text-l p-1">Elige los productos seleccionables (por defecto todos) </div>
         <div className="grid grid-cols-3 gap-2 auto p-1 text-center">
 
           {itemsSel.map((e) => (
@@ -63,33 +90,6 @@ function ItemsPage() {
               elems={itemsNew}
               func={selectItemNew} />
           ))}
-        </div>
-        <div className="p-3">
-          <ButtonStd
-            action={() => {
-              if (sessionCode === undefined) {
-                createSession(
-                  {
-                    code: newCode.toString(),
-                    items: itemsNew,
-                    categories: categories,
-                    date: dateInYyyyMmDdHhMm(new Date())
-                  },
-                  (p) => {
-                    setSessionCode(p);
-                    setOpenCode(p);
-                    setUrlCode(p);
-                  },
-                  (m) => {
-                    console.log(m);
-                  }
-                )
-              } else {
-                navigate('/summary');
-              }
-            }}
-            name={textButton}
-          />
         </div>
       </div>
     </div>
